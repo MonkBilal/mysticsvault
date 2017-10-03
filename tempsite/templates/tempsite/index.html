@@ -1,0 +1,17 @@
+
+{% extends 'tempsite/base.html' %}
+
+{%block content%}
+	{% for post in posts %}
+	<section>
+		<div class="container">
+			<h3><a href="{%url 'post_detail' pk=post.pk %}">{{post.title}}</a></h3>
+			<h6>{{post.published_date}}</h6>
+			<p>{{post.text| slice:":70"}}...</p>
+		</div>
+	</section>
+	{% endfor %}
+{% endblock %}
+			
+
+					

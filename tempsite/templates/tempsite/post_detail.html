@@ -1,0 +1,17 @@
+
+{% extends 'tempsite/base.html' %}
+
+{%block content%}
+	{% load static %}
+	{% load tempsite_extras %}
+	<section>
+		<div class="container">
+		<img src="{% static 'images/1.jpg' %}">
+		<header class="major">
+			<h2>{{post.title}}</h2>
+			<h5>{{post.published_date}}</h5>
+		</header>
+			<p>{{post.text| linebreaksbr }}</p>
+		</div>
+	</section>
+{% endblock %}
