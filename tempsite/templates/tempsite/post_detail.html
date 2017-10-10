@@ -13,5 +13,14 @@
 		</header>
 			<p>{{post.text| linebreaksbr }}</p>
 		</div>
+		<div>
+			<h3>Leave a comment</h3>
+			<a href="{% url 'add_comment' pk=post.pk %}">Leave a comment</a>
+			{%for comment in post.comments.all %}
+				<h5>{{comment.created}}</h5>
+				<h4>{{comment.user}}</h4>
+				<p>{{comment.body}}</p>
+			{%endfor%}
+		</div>
 	</section>
 {% endblock %}
